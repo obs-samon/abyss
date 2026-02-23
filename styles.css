@@ -588,6 +588,36 @@
   margin: 0;
 }
 
+.advent-header-btns {
+  display: flex;
+  align-items: center;
+  gap: var(--abyss-spacing-sm);
+}
+
+.advent-all-btn {
+  padding: var(--abyss-spacing-sm) var(--abyss-spacing-md);
+  background: var(--abyss-secondary);
+  border: 1px solid var(--abyss-border);
+  border-radius: var(--abyss-border-radius);
+  cursor: pointer;
+  transition: var(--abyss-transition);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--abyss-text-muted);
+}
+
+.advent-all-btn:hover {
+  background: var(--abyss-primary);
+  color: white;
+}
+
+.advent-all-btn.active {
+  background: var(--abyss-primary);
+  border-color: var(--abyss-primary);
+  color: white;
+}
+
 .advent-refresh-btn {
   padding: var(--abyss-spacing-sm) var(--abyss-spacing-md);
   background: var(--abyss-secondary);
@@ -747,4 +777,52 @@
 
 .advent-view-main .advent-continuation-item {
   font-size: 1rem;
+}
+
+/* 思考テキストのクリック可能インジケーター */
+.advent-thought-main {
+  cursor: pointer;
+}
+
+.advent-thought-main:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--abyss-text-muted);
+  text-underline-offset: 2px;
+}
+
+/* 全部表示モードのカテゴリ絵文字 */
+.advent-thought-emoji {
+  margin-right: 4px;
+  font-size: 1em;
+}
+
+/* ドラッグ&ドロップ */
+.priority-drag-handle {
+  cursor: grab;
+  font-size: 1.25rem;
+  color: var(--abyss-text-muted);
+  padding: 0 4px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.priority-drag-handle:active {
+  cursor: grabbing;
+}
+
+.priority-item[draggable="true"] {
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.priority-item.dragging {
+  opacity: 0.4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.priority-item.drag-over-top {
+  border-top: 2px solid var(--interactive-accent);
+}
+
+.priority-item.drag-over-bottom {
+  border-bottom: 2px solid var(--interactive-accent);
 }
